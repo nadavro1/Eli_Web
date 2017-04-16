@@ -6,7 +6,7 @@
         </div>
 
         <div class="span8">
-            <h3>User name</h3>
+            <h3>User gfngnf</h3>
             <h6>Email: MyEmail@servidor.com</h6>
             <h6>Ubication: Colombia</h6>
             <h6>Old: 1 Year</h6>
