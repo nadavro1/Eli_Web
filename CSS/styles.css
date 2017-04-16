@@ -1,0 +1,71 @@
+
+#btnRegister {
+    margin-left: 121px;
+    margin-top: 80px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#btnLogIn {
+    margin-left: 140px;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+#btnSchedule {
+    margin-left: 160px;
+    margin-top: 60px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+#btnAppeal {
+    margin-left: 180px;
+    margin-top: 40px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+
+body{
+    background-image: url(../photos/2.jpg);
+    background-size: 100%;
+
+}
+#RegisterForm {
+    background-image: url(/photos/2.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+label {
+    width: 200px;
+    display: inline-block;
+}
+html{
+    height:100%;
+}
+body{
+    min-height: 100%;
+}
