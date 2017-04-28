@@ -4,8 +4,8 @@
     <?php header('Content-Type: text/html; charset=utf-8'); ?>
     <meta charset="UTF-8">
 
-    <title>פרופיל אישי</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>הפרופיל האישי שלי</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="custom.js"></script>
 </head>
@@ -19,10 +19,14 @@ $email=$_SESSION['email'];
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-5  toppad  pull-right col-md-offset-3 " style="direction: rtl;"
-            <A href="" >ערוך פרופיל</A>
 
-            <A href="" >צא מהחשבון</A>
+        <div class="col-md-5  toppad  pull-right col-md-offset-3 " style="direction: rtl;"
+            <button id="btnEdit">עריכת פרטים</button>
+			<button id="btnOut">יציאה</button>
+			<button id="btnMakeSchedule">קבע/י תור</button>
+            <input name="newThread" type="button"  id=btnFeedback value="!תן/י לנו פידבק" onclick="window.open('UserFeedback.php')"/>
+			
+		echo " <a href="http://www.db-cards.com/eli-kapaluto">הכרטיס הדיגיטלי שלנו</a>";
 
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" style="background-color: white;
@@ -64,7 +68,7 @@ $email=$_SESSION['email'];
                             </table>
                             <br>
 
-                            <a href="#" class="btn btn-primary">קבע תור</a>
+                           
                         </div>
                     </div>
                 </div>
@@ -119,5 +123,58 @@ $email=$_SESSION['email'];
     .toppad
     {margin-top:20px;
     }
+
+	#btnOut 
+	{
+	margin-left: 180px;
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+	}
+
+	#btnEdit
+	{
+	margin-left: 180px;
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+	}
+
+	#btnFeedback 
+	{
+	margin-left: 180px;
+    margin-top: 40px;
+    width: 95px;
+    height: 95px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+	}
+
+	#btnMakeSchedule
+	{
+	margin-left: 180px;
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    border: solid;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+	}
+
 
 </style>
