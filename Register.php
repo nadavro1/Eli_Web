@@ -11,30 +11,32 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="custom.js"></script>
-</head> 
+</head>
+<script>
+
+</script>
 <body>
 
-    <form action="signup.php" method="POST">
+    <form action="signup.php" method="POST" id="sign_up" ;">
         <h2>הרשמה</h2>
         <p>
             שם פרטי
 
-            <input id="first" name="first" type="text">
+            <input id="first" name="first" type="text" style="direction: ltr" required placeholder="הכנס שם פרטי" pattern="[a-zA-Z]+"  title="אנא הכנס אותיות באנגלית בלבד">
         </p>
         <p>
             שם משפחה
 
-            <input id="last" name="last" type="text">
+            <input id="last" name="last" type="text" style="direction: ltr"  required placeholder="הכנס שם משפחה" pattern="[a-zA-Z]+"  title="אנא הכנס אותיות באנגלית בלבד">
         </p>
         <p>
             אימייל
 
-            <input id="Email" name="uid" type="text" style="direction: ltr">
+            <input id="Email" name="uid" type="text" style="direction: ltr" required pattern=".+@.+\..+" title="הכנס כתובת אימייל תקינה" placeholder="הכנס כתובת אימייל">
         </p>
         <p>
             סיסמא
-            >
-            <input id="password" name="pwd" type="password" style="direction: ltr">
+            <input id="password" name="pwd" type="password" style="direction: ltr" placeholder="הכנס סיסמא" required>
             <span>תנאי לסיסמא</span>
         </p>
 
