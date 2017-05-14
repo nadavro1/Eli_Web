@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Web Maker Description">
-  <title>הפרופיל האישי שלי</title>
+      <title>הפרופיל האישי שלי</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -19,19 +14,28 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="jquery-3.2.1.min.js"></script>
-    <script src="custom.js"></script>
-  
-  
-  
+
+
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
+    <script src="assets/jarallax/jarallax.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
 </head>
 
 <body>
 <?php
+
 session_start();
 $first_name=$_SESSION['first_name'];
+
 $last_name=$_SESSION['last_name'];
-$email=$_SESSION['email'];
+$email = $_SESSION['email'];
 
 ?>
 
@@ -62,11 +66,10 @@ $email=$_SESSION['email'];
                                 <td>טלפון:</td>
                                 <td>?</td>
                             </tr>
-
                             <tr>
-                                <td>מייל:</td>
-                                <td><a><?php echo $email ?></a></td>
-
+                                <td>אימייל:</td>
+                                <td><?php echo $email ?></td>
+                            </tr>
 
                             </tbody>
                         </table>
@@ -102,7 +105,7 @@ $email=$_SESSION['email'];
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/"></a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white" href="">יציאה</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/"></a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white" href="index.php">יציאה</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -145,15 +148,6 @@ $email=$_SESSION['email'];
 </footer>
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smooth-scroll/smooth-scroll.js"></script>
-  <script src="assets/dropdown/js/script.min.js"></script>
-  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
-  <script src="assets/jarallax/jarallax.js"></script>
-  <script src="assets/theme/js/script.js"></script>
   
   
   <input name="animation" type="hidden">

@@ -47,11 +47,6 @@
 
 
 
-body{
-    background-image: url(../photos/2.jpg);
-    background-size: 100%;
-
-}
 #RegisterForm {
     background-image: url(/photos/2.jpg);
     height: 100%;
@@ -59,13 +54,8 @@ body{
     background-size: cover;
 }
 
-label {
-    width: 200px;
-    display: inline-block;
-}
-html{
-    height:100%;
-}
-body{
-    min-height: 100%;
+.login_label{
+    direction: rtl;
+    float: right;
+    padding-right: 9%;
 }
