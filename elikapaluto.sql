@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2017 at 05:20 PM
+-- Generation Time: May 28, 2017 at 08:07 PM
 -- Server version: 5.7.12-log
 -- PHP Version: 5.6.25
 
@@ -23,18 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `appoinments`
+-- Table structure for table `appointments`
 --
 DROP DATABASE IF EXISTS elikapaluto;
 CREATE DATABASE elikapaluto /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE elikapaluto;
-CREATE TABLE `appoinments` (
+CREATE TABLE `appointments` (
   `app_id` int(11) NOT NULL,
-  `app_date` date NOT NULL,
-  `client_id` int(11) NOT NULL,
-  `worker_id` int(11) NOT NULL,
-  `status` varchar(45) CHARACTER SET latin1 NOT NULL
+  `app_date` date DEFAULT NULL,
+  `app_time` time DEFAULT NULL,
+  `full_name` varchar(45) NOT NULL,
+  `email` varchar(1000) NOT NULL,
+  `comments` text,
+  `status` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `haircut_type` varchar(45) NOT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `barber_name` varchar(42) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`app_id`, `app_date`, `app_time`, `full_name`, `email`, `comments`, `status`, `haircut_type`, `phone`, `barber_name`) VALUES
+(10, NULL, NULL, 'Nadav Rosenfeld', 'nadavro1@gmail.com', 'הערה', '0', 'תספורת גברים', '0526549910', 'אסתי');
 
 -- --------------------------------------------------------
 
@@ -73,16 +85,17 @@ CREATE TABLE `user` (
   `first` varchar(42) NOT NULL,
   `last` varchar(42) NOT NULL,
   `uid` varchar(1000) NOT NULL,
-  `pwd` varchar(1000) NOT NULL
+  `pwd` varchar(1000) NOT NULL,
+  `phone` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `first`, `last`, `uid`, `pwd`) VALUES
-(14, 'Nadav', 'Rosenfeld', 'root@gmail.com', 'root'),
-(15, 'סהר', 'רון', 'email@gmail.co', 'test');
+INSERT INTO `user` (`id`, `first`, `last`, `uid`, `pwd`, `phone`) VALUES
+(14, 'Nadav', 'Rosenfeld', 'nadavro1@gmail.com', 'root', '0526549910'),
+(15, 'סהר', 'רון', 'email@gmail.co', 'test', '');
 
 -- --------------------------------------------------------
 
@@ -103,12 +116,12 @@ CREATE TABLE `worker` (
 --
 
 --
--- Indexes for table `appoinments`
+-- Indexes for table `appointments`
 --
-ALTER TABLE `appoinments`
+ALTER TABLE `appointments`
   ADD PRIMARY KEY (`app_id`),
-  ADD KEY `client_id` (`client_id`),
-  ADD KEY `worker_id` (`worker_id`);
+  ADD KEY `email` (`email`),
+  ADD KEY `barber_name` (`barber_name`);
 
 --
 -- Indexes for table `feedbacks`
@@ -127,7 +140,8 @@ ALTER TABLE `inventory`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `uid` (`uid`);
 
 --
 -- Indexes for table `worker`
@@ -140,6 +154,11 @@ ALTER TABLE `worker`
 --
 
 --
+-- AUTO_INCREMENT for table `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `app_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
@@ -148,17 +167,16 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `appoinments`
+-- Constraints for table `appointments`
 --
-ALTER TABLE `appoinments`
-  ADD CONSTRAINT `appoinments_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `appoinments_ibfk_2` FOREIGN KEY (`worker_id`) REFERENCES `worker` (`worker_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `appointments`
+  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`email`) REFERENCES `user` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `feedbacks`

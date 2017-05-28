@@ -156,12 +156,11 @@
     <!-- Begin Page Content -->
     <div id="container">
         <form action="" method="post" id="log-in">
-            <label class="login_label" for="username" style="">שם משתמש:</label>
+            <label class="login_label" for="username" style="">אימייל:</label>
             <input type="text" name="username" id= "user_login">
             <label class="login_label" for="password">סיסמה:</label>
             <input type="password" name="password" id= "password_login">
             <div id="lower">
-                <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
                 <input type="submit" value="Login">
                 <p class="show3"></p>
             </div><!--/ lower-->

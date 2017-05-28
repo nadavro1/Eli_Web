@@ -32,7 +32,7 @@ if($valid==1){
     $_SESSION['connect'] = "connected";
     $_SESSION['first_name'] = $varible['first_name'];
     $_SESSION['last_name'] = $varible['last_name'];
-    $_SESSION['email'] = $userName;
+    $_SESSION['phone'] = $varible['phone'];
 //  console_log( $__SESSION['full_name'] );
     //echo $__SESSION['full_name'];
     //print_r($__SESSION);
@@ -61,6 +61,7 @@ function checkUserName($userName,$password,$conn) {
                 $array['password'] = 1;
                 $array['first_name']=$row['first'];//for returning the first name
                 $array['last_name']=$row['last'];//for returning the first name
+                $array['phone']=$row['phone'];//for returning the phone
                 break;
             }
             else{

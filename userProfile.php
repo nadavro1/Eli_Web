@@ -1,3 +1,10 @@
+<?php
+//session_start();
+
+
+?>
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +20,7 @@
   <link rel="stylesheet" href="assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
@@ -32,10 +39,20 @@
 <?php
 
 session_start();
+
+ if($_SESSION['connect']!="connected")
+        header('Location: LogInScreen');
+
+
+
 $first_name=$_SESSION['first_name'];
 
 $last_name=$_SESSION['last_name'];
-$email = $_SESSION['email'];
+$email = $_SESSION['user_name'];
+$phone= $_SESSION['phone'];
+
+
+
 
 ?>
 
@@ -50,6 +67,11 @@ $email = $_SESSION['email'];
 
 
                     <div class=" col-md-9 col-lg-9 ">
+                        <?php
+//                        echo '<pre>';
+//                        var_dump($_SESSION);
+//                        echo '</pre>';?>
+
                         <table class="table table-user-information">
                             <tbody>
                             <tr>
@@ -64,7 +86,7 @@ $email = $_SESSION['email'];
                             <tr>
                             <tr>
                                 <td>טלפון:</td>
-                                <td>?</td>
+                                <td><?php echo $phone ?></td>
                             </tr>
                             <tr>
                                 <td>אימייל:</td>
@@ -105,7 +127,7 @@ $email = $_SESSION['email'];
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/"></a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white" href="index.php">יציאה</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/"></a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white" href="logout.php">יציאה מהמשתמש</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -130,7 +152,7 @@ $email = $_SESSION['email'];
 
                     <h1 class="mbr-section-title display-1"><br><em><br></em></h1>
                     <p class="mbr-section-lead lead"></p>
-                    <div class="mbr-section-btn">    <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-calendar mbr-iconfont mbr-iconfont-btn"></span>בטל תור</a> <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-calendar mbr-iconfont mbr-iconfont-btn"></span>קבע תור</a>  <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-edit mbr-iconfont mbr-iconfont-btn"></span>עריכת פרופיל</a> <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-envelope mbr-iconfont mbr-iconfont-btn"></span>צור קשר</a>        </div>
+                    <div class="mbr-section-btn">    <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-calendar mbr-iconfont mbr-iconfont-btn"></span>בטל תור</a> <a class="btn btn-lg btn-white-outline btn-white" href="AppointmentRegisteredClient"><span class="etl-icon icon-calendar mbr-iconfont mbr-iconfont-btn"></span>קבע תור</a>  <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-edit mbr-iconfont mbr-iconfont-btn"></span>עריכת פרופיל</a> <a class="btn btn-lg btn-white-outline btn-white" href=""><span class="etl-icon icon-envelope mbr-iconfont mbr-iconfont-btn"></span>צור קשר</a>        </div>
                 </div>
             </div>
         </div>
